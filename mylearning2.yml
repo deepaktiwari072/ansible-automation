@@ -1,0 +1,12 @@
+-
+    name: 'create user on all web_nodes'
+    hosts: web_nodes
+    remote_user: mauz_kro
+    become: yes
+    tasks:
+      - 
+        name: 'need to add web user'
+        user:
+            name: my_web
+            uid: 1040
+            group: nginx
