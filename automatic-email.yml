@@ -1,0 +1,16 @@
+-
+    name: 'check the status of service and email if service down'
+    hosts: web_nodes
+    remote_user: mauz_kro
+    become: yes
+    tasks:
+      - command: service httpd start
+        register: result
+
+      -
+        mail:
+          to: test@gmail.com
+          subject: 'service httpd down'
+          body: httpd service is down'
+          when: result.stdout.find('down') != -1
+    

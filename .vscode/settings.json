@@ -1,5 +1,9 @@
 {
     "yaml.schemas": {
-        "https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/ansible.json#/$defs/playbook": "file:///f%3A/intellipath/ansible/mylearning2.yml"
+        "https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/ansible.json#/$defs/playbook": [
+            "file:///f%3A/intellipath/ansible/mylearning2.yml",
+            "file:///f%3A/intellipath/ansible/automatic-email.yml",
+            "file:///f%3A/intellipath/ansible/when-condition.yml"
+        ]
     }
 }

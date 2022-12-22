@@ -1,0 +1,24 @@
+-
+    name: 'Execute a script on all web server nodes'
+    hosts: all_servers
+    remote_user: mauz_kro
+    become: yes
+    tasks:
+        -
+            when: 'ansible_host == "server4.company.com"'
+            service: 'name=mysql state=started'
+
+
+# below is the 2 condition to print the statement 
+-
+    name: 'Am I an Adult or a Child?'
+    hosts: localhost
+    vars:
+        age: 25
+    tasks:
+        -
+            command: 'echo "I am a Child"'
+            when: 'age < 18'
+        -
+            command: 'echo "I am an Adult"'
+            when: 'age >= 18'
