@@ -1,0 +1,15 @@
+- 
+    name: install multiple software in web_nodes
+    hosts: web_nodes
+    remote_user: mauz_kro
+    become: 'yes'
+    vars:
+      packages: 
+                - apache2 
+                - tree 
+                - git
+    tasks:
+      - apt:
+          name: '{{ packages }}'
+          state: present
+        with_items: '{{ packages }}'
